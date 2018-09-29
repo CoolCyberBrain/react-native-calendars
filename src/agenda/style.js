@@ -30,7 +30,12 @@ export default function styleConstructor(theme = {}) {
       height: 24,
       bottom: 0,
       alignItems: 'center',
-      backgroundColor: appStyle.calendarBackground
+      backgroundColor: appStyle.calendarBackground,
+      // shadowOpacity: 0.186,
+      // shadowRadius: 2.16,
+      // shadowOffset: {
+      //   height: 2.4,
+      // }
     },
     weekday: {
       width: 32,
@@ -41,7 +46,7 @@ export default function styleConstructor(theme = {}) {
     reservations: {
       flex: 1,
       marginTop: 104,
-      backgroundColor: appStyle.backgroundColor
+      // backgroundColor: appStyle.backgroundColor
     },
     ...(theme[STYLESHEET_ID] || {})
   });
