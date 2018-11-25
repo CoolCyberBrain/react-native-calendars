@@ -127,6 +127,9 @@ class CalendarList extends Component {
   }
 
   componentWillReceiveProps(props) {
+    if (props.theme !== this.props.theme)
+      this.style = styleConstructor(props.theme);
+
     const current = parseDate(this.props.current);
     const nextCurrent = parseDate(props.current);
     if (nextCurrent && current && nextCurrent.getTime() !== current.getTime()) {
