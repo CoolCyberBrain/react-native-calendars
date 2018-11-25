@@ -100,7 +100,7 @@ class Calendar extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.theme !== this.props.theme)
-      this.style = styleConstructor(props.theme);
+      this.style = styleConstructor(nextProps.theme);
 
     const current= parseDate(nextProps.current);
     if (current && current.toString('yyyy MM') !== this.state.currentMonth.toString('yyyy MM')) {
