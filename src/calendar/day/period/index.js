@@ -44,6 +44,11 @@ class Day extends Component {
     this.props.onLongPress(this.props.date);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.theme !=== prevProps.theme)
+      this.style = styleConstructor(this.props.theme);
+  }
+
   shouldComponentUpdate(nextProps) {
     const newMarkingStyle = this.getDrawingStyle(nextProps.marking);
 
@@ -52,7 +57,7 @@ class Day extends Component {
       return true;
     }
 
-    return shouldUpdate(this.props, nextProps, ['state', 'children', 'onPress', 'onLongPress']);
+    return shouldUpdate(this.props, nextProps, ['state', 'children', 'onPress', 'onLongPress', 'theme']);
   }
 
   getDrawingStyle(marking) {
