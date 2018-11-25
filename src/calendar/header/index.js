@@ -46,6 +46,11 @@ class CalendarHeader extends Component {
     this.props.addMonth(-1);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.theme !== prevProps.theme)
+      this.style = styleConstructor(this.props.theme);
+  }
+
   shouldComponentUpdate(nextProps) {
     if (
       nextProps.month.toString('yyyy MM') !==
@@ -57,6 +62,9 @@ class CalendarHeader extends Component {
       return true;
     }
     if (nextProps.hideDayNames !== this.props.hideDayNames) {
+      return true;
+    }
+    if (nextProps.theme !== this.props.theme) {
       return true;
     }
     return false;
