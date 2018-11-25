@@ -44,9 +44,9 @@ class Day extends Component {
     this.props.onLongPress(this.props.date);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.theme !== prevProps.theme)
-      this.style = styleConstructor(this.props.theme);
+  componentWillReceiveProps(props) {
+    if (props.theme !== this.props.theme)
+      this.style = styleConstructor(props.theme);
   }
 
   shouldComponentUpdate(nextProps) {
