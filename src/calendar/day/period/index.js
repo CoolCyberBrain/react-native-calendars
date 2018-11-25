@@ -45,7 +45,7 @@ class Day extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.theme !=== prevProps.theme)
+    if (this.props.theme !== prevProps.theme)
       this.style = styleConstructor(this.props.theme);
   }
 
