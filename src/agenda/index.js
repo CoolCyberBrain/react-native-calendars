@@ -252,7 +252,7 @@ export default class AgendaView extends Component {
     this.chooseDay(d, !this.state.calendarScrollable);
   }
 
-  chooseDay(d, optimisticScroll) {
+  chooseDay(d, optimisticScroll, animated = true) {
     const day = parseDate(d);
     this.setState({
       calendarScrollable: false,
@@ -266,8 +266,8 @@ export default class AgendaView extends Component {
         topDay: day.clone()
       });
     }
-    this.setScrollPadPosition(this.initialScrollPadPosition(), true);
-    this.calendar.scrollToDay(day, this.calendarOffset(), true);
+    this.setScrollPadPosition(this.initialScrollPadPosition(), animated);
+    this.calendar.scrollToDay(day, this.calendarOffset(), animated);
     if (this.props.loadItemsForMonth) {
       this.props.loadItemsForMonth(xdateToData(day));
     }
