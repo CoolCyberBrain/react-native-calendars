@@ -113,6 +113,7 @@ class ReactComp extends Component {
     return (
       <View onLayout={this.onRowLayoutChange.bind(this, index)}>
         <Reservation
+          today={this.props.today}
           item={item}
           renderItem={this.props.renderItem}
           renderDay={this.props.renderDay}
