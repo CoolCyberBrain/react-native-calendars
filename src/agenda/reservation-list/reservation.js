@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {xdateToData} from '../../interface';
+import {parseDate, xdateToData} from '../../interface';
 import XDate from 'xdate';
 import dateutils from '../../dateutils';
 import styleConstructor from './style';
@@ -36,7 +36,7 @@ class ReservationListItem extends Component {
       return this.props.renderDay(date ? xdateToData(date) : undefined, item);
     }
     const todayData = this.props.today;
-    const today = dateutils.sameDate(date, todayData ? XDate(todayData) : XDate()) ? this.styles.today : undefined;
+    const today = dateutils.sameDate(date, todayData ? parseDate(todayData) : XDate()) ? this.styles.today : undefined;
     if (date) {
       return (
         <View style={this.styles.day}>
