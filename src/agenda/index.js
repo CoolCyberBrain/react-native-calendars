@@ -219,8 +219,6 @@ export default class AgendaView extends Component {
   }
 
   componentWillReceiveProps(props) {
-    if (props.theme !== this.props.theme)
-      this.styles = styleConstructor(props.theme);
     if (props.items) {
       this.setState({
         firstResevationLoad: false

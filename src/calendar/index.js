@@ -41,7 +41,7 @@ class Calendar extends Component {
     // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
     firstDay: PropTypes.number,
 
-    // Date marking style [simple/period/multi-dot/multi-period]. Default = 'simple'
+    // Date marking style [simple/period/multi-dot/multi-period]. Default = 'simple' 
     markingType: PropTypes.string,
 
     // Hide month navigation arrows. Default = false
@@ -99,9 +99,6 @@ class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.theme !== this.props.theme)
-      this.style = styleConstructor(props.theme);
-
     const current= parseDate(nextProps.current);
     if (current && current.toString('yyyy MM') !== this.state.currentMonth.toString('yyyy MM')) {
       this.setState({

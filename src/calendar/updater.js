@@ -46,9 +46,6 @@ export default function shouldComponentUpdate(nextProps, nextState) {
       field: 'current'
     };
   }
-
-  if (nextProps.theme !== this.props.theme) shouldUpdate.update = true;
-
   //console.log(shouldUpdate.field, shouldUpdate.update);
   return shouldUpdate.update;
 }
