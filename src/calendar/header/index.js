@@ -46,9 +46,9 @@ class CalendarHeader extends Component {
     this.props.addMonth(-1);
   }
 
-  componentWillReceiveProps(props) {
-    if (props.theme !== this.props.theme)
-      this.style = styleConstructor(props.theme);
+  componentDidUpdate(prevProps) {
+    if (this.props.theme !== prevProps.theme)
+      this.style = styleConstructor(this.props.theme);
   }
 
   shouldComponentUpdate(nextProps) {
