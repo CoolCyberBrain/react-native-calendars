@@ -27,13 +27,8 @@ class Day extends Component {
     this.props.onPress(this.props.date);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.theme !=== prevProps.theme)
-      this.style = styleConstructor(this.props.theme);
-  }
-
   shouldComponentUpdate(nextProps) {
-    return shouldUpdate(this.props, nextProps, ['state', 'children', 'marking', 'onPress', 'onLongPress', 'theme']);
+    return shouldUpdate(this.props, nextProps, ['state', 'children', 'marking', 'onPress', 'onLongPress']);
   }
 
   renderPeriods(marking) {
