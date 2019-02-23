@@ -119,6 +119,7 @@ export default class AgendaView extends Component {
     this.generateMarkings = this.generateMarkings.bind(this);
     this.knobTracker = new VelocityTracker();
     this.state.scrollY.addListener(({value}) => this.knobTracker.add(value));
+    this.isOnLayoutInitialized = false;
   }
 
   calendarOffset() {
@@ -143,9 +144,12 @@ export default class AgendaView extends Component {
   }
 
   onLayout(event) {
-    this.viewHeight = event.nativeEvent.layout.height;
-    this.viewWidth = event.nativeEvent.layout.width;
-    this.forceUpdate();
+    if (!this.isOnLayoutInitialized) {
+      this.isOnLayoutInitialized = true;
+      this.viewHeight = event.nativeEvent.layout.height;
+      this.viewWidth = event.nativeEvent.layout.width;
+      this.forceUpdate();
+    }
   }
 
   onTouchStart() {
