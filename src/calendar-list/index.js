@@ -229,12 +229,11 @@ class CalendarList extends Component {
   renderCalendar({ item }) {
     return (
       <CalendarListItem
-        item={item}
-        calendarHeight={this.props.calendarHeight}
-        calendarWidth={
-          this.props.horizontal ? this.props.calendarWidth : undefined
-        }
-        {...this.props}
+        scrollToMonth={this.scrollToMonth.bind(this)}
+        item={item} 
+        calendarHeight={this.props.calendarHeight} 
+        calendarWidth={this.props.horizontal ? this.props.calendarWidth : undefined} 
+        {...this.props} 
         style={this.props.calendarStyle}
       />
     );
