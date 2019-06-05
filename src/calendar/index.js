@@ -181,38 +181,30 @@ class Calendar extends Component {
     ) {
       state = "today";
     }
-    let dayComp;
-    if (
-      !dateutils.sameMonth(day, this.state.currentMonth) &&
-      this.props.hideExtraDays
-    ) {
-      if (["period", "multi-period"].includes(this.props.markingType)) {
-        dayComp = <View key={id} style={{ flex: 1 }} />;
-      } else {
-        dayComp = <View key={id} style={this.style.dayContainer} />;
-      }
-    } else {
-      const DayComp = this.getDayComponent();
-      const date = day.getDate();
-      const dateAsObject = xdateToData(day);
-
-      return (
-        <View style={{ flex: 1, alignItems: "center" }} key={id}>
-          <DayComp
-            testID={`${SELECT_DATE_SLOT}-${dateAsObject.dateString}`}
-            state={state}
-            theme={this.props.theme}
-            onPress={this.pressDay}
-            onLongPress={this.longPressDay}
-            date={dateAsObject}
-            marking={this.getDateMarking(day)}
-          >
-            {date}
-          </DayComp>
-        </View>
-      );
+    
+    if (!dateutils.sameMonth(day, this.state.currentMonth) && this.props.hideExtraDays) {
+      return (<View key={id} style={{flex: 1}}/>);
     }
-    return dayComp;
+
+    const DayComp = this.getDayComponent();
+    const date = day.getDate();
+    const dateAsObject = xdateToData(day);
+
+    return (
+      <View style={{ flex: 1, alignItems: "center" }} key={id}>
+        <DayComp
+          testID={`${SELECT_DATE_SLOT}-${dateAsObject.dateString}`}
+          state={state}
+          theme={this.props.theme}
+          onPress={this.pressDay}
+          onLongPress={this.longPressDay}
+          date={dateAsObject}
+          marking={this.getDateMarking(day)}
+        >
+          {date}
+        </DayComp>
+      </View>
+    );
   }
 
   getDayComponent() {
