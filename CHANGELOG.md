@@ -43,3 +43,38 @@
 ## [1.196.0] - 2019-07-04
 ### Added
 - CalendarList - passing 'testID' to static CalendarHeader.
+
+## [1.197.0] - 2019-07-14
+### Added
+- asCalendarConsumer - hoist non-react statics.
+
+## [1.198.0] - 2019-07-14
+### Fix
+- ExpandableCalendar - fix example screen.
+
+## [1.199.0] - 2019-07-18
+### Changed
+- CalendarHeader - editing 'testID' for static CalendarHeader.
+
+## [1.200.0] - 2019-07-18
+### Added
+- ExpandableCalendar - adding testID for knob.
+
+## [1.201.0] - 2019-07-25
+### Change
+- eslint - updating to version 6.1.0.
+- lodash - importing library instead of sub-libraries.
+
+## [1.202.0] - 2019-07-25
+### Added
+- CalendarHeader - adding 'firstDay' (PR #826), 'monthFormat' (PR #787) and 'weekNumbers' to shouldComponentUpdate.
+- Agenda - adding support for weekdays name's 'fontSize', 'fontFamily' and 'fontWeight' (PR #711).
+- ReservationList - adding support for Day number's 'fontFamily', and to Day text's 'fontFamily' and 'fontWeight' (PR #711).
+
+## [1.203.0] - 2019-07-31
+### Fix
+- ExpandableCalendar - fix for vertical open height.
+
+## [1.204.0] - 2019-08-6
+### Fix
+- CalendarProvider - adding 'buttonTopPosition' prop to control the button's y position.

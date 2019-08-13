@@ -157,13 +157,14 @@ export default class ExpandableCalendarScreen extends Component {
         theme={{todayButtonTextColor: '#0059ff'}} 
         showTodayButton 
         disabledOpacity={0.6}
+        // todayBottomMargin={16}
       >
         <ExpandableCalendar 
           // horizontal={false}
           // hideArrows
           // disablePan
           // hideKnob
-          // initialPosition={'open'} // ExpandableCalendar.positions.OPEN - can't find static positions
+          // initialPosition={ExpandableCalendar.positions.OPEN}
           firstDay={1}
           markedDates={this.getMarkedDates()} // {'2019-06-01': {marked: true}, '2019-06-02': {marked: true}, '2019-06-03': {marked: true}};
           theme={this.getTheme()}
