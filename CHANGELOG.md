@@ -78,3 +78,25 @@
 ## [1.204.0] - 2019-08-6
 ### Fix
 - CalendarProvider - adding 'buttonTopPosition' prop to control the button's y position.
+
+## [1.205.0] - 2019-08-15
+### Fix
+- Week - fix for style - removing width to allow flex.
+
+## [1.206.0] - 2019-08-15
+### Fix
+- CalendarProvider - fix header in vertical mode when initial position is 'open'.
+
+## [1.207.0] - 2019-08-15
+### Added
+- CalendarProvider - 'todayButtonStyle' prop to allow passing style to the today button.
+
+## [1.208.0] - 2019-08-15
+### Added
+- CalendarProvider - today button size for tablet. 
+  Passing style prop to a container View.
+- ExpandableCalendar - adjusting vertical mode open height for tablet in both orientations.
+
+## [1.209.0] - 2019-08-20
+### Fix
+- CalendarProvider - Fix for children wrapper view.
